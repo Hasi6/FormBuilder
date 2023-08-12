@@ -133,7 +133,7 @@ const FormBuilder = () => {
                 }
                 label={rule.label}
               />
-
+              {/*  Extra Rule configuration UIs */}
               {fieldRules[rule.key] && rule.ui && (
                 <div>
                   {rule.ui.type === 'number' && (

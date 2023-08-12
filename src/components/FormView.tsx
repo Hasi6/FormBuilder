@@ -33,9 +33,9 @@ const FormView: React.FC = () => {
       case FieldType.String:
         return generateStringSchema(rules, value);
       case FieldType.Number:
-        return generateNumberSchema(rules, value);
+        return generateNumberSchema(rules);
       case FieldType.Date:
-        return generateDateSchema(rules, value);
+        return generateDateSchema(rules);
       default:
         return z.any();
     }
@@ -80,7 +80,7 @@ const FormView: React.FC = () => {
             <Typography
               key={index}
               variant='body2'
-              color='error' // Use 'error' color from theme
+              color='error'
               style={{ textAlign: 'left' }}
             >
               {error}

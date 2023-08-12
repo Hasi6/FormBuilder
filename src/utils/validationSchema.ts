@@ -45,7 +45,7 @@ export const generateStringSchema = (rules: FieldRule, value: FieldValue) => {
 };
 
 // Helper function for number validation rules
-export const generateNumberSchema = (rules: FieldRule, _: FieldValue) => {
+export const generateNumberSchema = (rules: FieldRule) => {
   let rule = z.number();
 
   if (rules?.min?.value && rules?.min?.uiValue) {
@@ -74,10 +74,8 @@ export const generateNumberSchema = (rules: FieldRule, _: FieldValue) => {
 };
 
 // Helper function for date validation rules
-export const generateDateSchema = (rules: FieldRule, value: FieldValue) => {
+export const generateDateSchema = (rules: FieldRule) => {
   let rule = z.date();
-
-  console.log(rules, value);
 
   if (rules?.max?.value && rules?.max?.uiValue) {
     rule = rule.max(new Date(rules?.max?.uiValue as string));
