@@ -3,17 +3,6 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 import { FieldValue } from '@/components/FormView';
 
-export interface RuleUI {
-  type: 'number' | 'text' | 'date';
-  min?: number;
-}
-
-export interface Rule {
-  key: string;
-  label: string;
-  ui?: RuleUI;
-}
-
 export enum FieldType {
   Boolean = 'boolean',
   Date = 'date',

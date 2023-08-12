@@ -13,8 +13,8 @@ import DateField from '@/components/fields/DateField';
 import { Dropdown } from '@/components/fields/Dropdown.tsx';
 import { InputField } from '@/components/fields/InputField';
 import { RootState } from '@/store/config.ts';
-import { addField, FieldRule, FieldType, Rule } from '@/store/form.ts';
-import { rulesByFieldType } from '@/constants';
+import { addField, FieldRule, FieldType } from '@/store/form.ts';
+import { Rule, rulesByFieldType } from '@/constants';
 
 const FormBuilder = () => {
   const [currentType, setCurrentType] = useState<FieldType>();
@@ -155,6 +155,7 @@ const FormBuilder = () => {
                       }
                       type='text'
                       value={ruleUI[rule.key] || ''}
+                      helperText={rule.helperText}
                     />
                   )}
                   {rule.ui.type === 'date' && (

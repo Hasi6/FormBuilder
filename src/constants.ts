@@ -1,4 +1,16 @@
-import { FieldType, Rule } from '@/store/form';
+import { FieldType } from '@/store/form';
+
+export interface RuleUI {
+  type: 'number' | 'text' | 'date';
+  min?: number;
+}
+
+export interface Rule {
+  helperText?: string;
+  key: string;
+  label: string;
+  ui?: RuleUI;
+}
 
 export interface RulesByFieldType {
   [FieldType.String]: Rule[];
@@ -10,7 +22,13 @@ export interface RulesByFieldType {
 export const rulesByFieldType: RulesByFieldType = {
   [FieldType.String]: [
     { key: 'minLength', label: 'Min Length', ui: { type: 'number', min: 1 } },
-    { key: 'matchesPattern', label: 'Regex', ui: { type: 'text' } },
+    {
+      helperText:
+        'Add your regex without / in the start and end. like this [A-Z]$',
+      key: 'matchesPattern',
+      label: 'Regex',
+      ui: { type: 'text' },
+    },
     { key: 'startsWithCapital', label: 'Start with Capital' },
     { key: 'noSpecialCharacters', label: 'No special Characters' },
     { key: 'isEmail', label: 'Email' },
