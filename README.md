@@ -1,38 +1,65 @@
-# Frontend Developer Homework Assignment
+## Project Input Validation and Dynamic Validation Settings
 
-## Objective:
+This README provides an overview of the input validation capabilities and
+dynamic validation settings integrated into the project. These features empower
+developers to ensure data integrity and enhance user experience through flexible
+validation customization.
 
-You will be working with an existing form builder. The builder provides a possibility to choose one of several field types, set a key, a label, and add it into a form. Your task is divided into two main parts.
+### Requirements
 
-## Task Details:
+- **Node.js 18.x.x:** Ensure you have Node.js 18 installed to take advantage of
+  the latest features and performance improvements.
 
-### 1. Field Input Validation:
+- **npm 9.x.x:** It is recommended to use npm version 9.x.x to manage your
+  project's dependencies and packages. This version provides enhanced security
+  and reliability.
 
-In the existing application, we need to add validation to each input field according to its assigned type. For instance, if a field's type is ParamType.Number, the system should not allow the input of any non-numeric characters or symbols. Conversely, if the type is ParamType.String, any character input should be acceptable.
+### Usage and Recommendations
 
-If a user attempts to input data that does not conform to the field's type, your solution should trigger an error function that displays an appropriate message. Validation should be triggered upon the blur event on each field.
+- **Yarn for Package Management:** While npm 9 is recommended, using Yarn as
+  your package manager can further optimize dependency resolution and
+  installation speed. Yarn has gained popularity for its speed and efficiency in
+  managing project dependencies.
 
-### 2. Dynamic Validation Setting:
+### 1. Field Input Validation
 
-In addition to basic field type validation, we need a feature that allows additional, user-defined validation rules to be set directly through the interface. This functionality should allow for rules such as:
+Input validation is a fundamental aspect of the project, and it has been
+implemented using the Zod library. Zod provides a solid foundation for enforcing
+basic field validation, enhancing data quality, and preventing invalid inputs
+from compromising the system's integrity.
 
-- The entered value must be greater than or equal to 5.
-- The input must begin with a capital letter.
-- The input must match a specific pattern (e.g., an email format).
-- The input must not contain any special characters.
-- The input must be a valid date. 
+### 2. Dynamic Validation Setting
 
-The interface should allow for the definition of these and other validation rules, without requiring modifications to the codebase for each new rule. The specifics of how you enable this dynamic rule-setting are up to you, but we're looking for an innovative, flexible, and scalable solution.
+One of the standout features of this project is the ability for users to
+configure dynamic validations directly through the intuitive UI. This offers a
+user-friendly way to define specific validation criteria tailored to the
+project's requirements. The dynamic validation process seamlessly integrates
+with the Zod library, ensuring consistent and reliable validation.
 
-## Submission:
+Key aspects of the dynamic validation setting:
 
-Submit your solution by pushing your code to a public GitHub repository. Ensure your code is clean, well-commented, and adheres to our current project structure. Also, include a README file that explains your thought process and the design of your solution.
+- **User-Friendly Configuration:** Users can effortlessly define and modify
+  validation rules through the project's UI. This eliminates the need for manual
+  code adjustments and empowers non-technical users to participate in shaping
+  data validation.
 
-## Evaluation Criteria:
+- **Zod Integration:** The dynamic validation process leverages the power of the
+  Zod library. This ensures that even complex validation scenarios are handled
+  effectively, maintaining data quality and reliability.
 
-- The code must be clean, efficient and well-commented.
-- The solution should successfully implement the features described above.
-- The design should be scalable and maintainable, allowing for the possibility of adding more validation types in the future.
-- The README file should provide clear insight into your thought process and the rationale behind your design decisions.
+- **Flexible Schema Management:** The project incorporates three initial
+  validation schemas, which are defined in the `utils/validationSchema.ts` file.
+  These serve as templates for validation rules and can be extended as needed to
+  accommodate new requirements. Developers have the flexibility to add
+  additional schemas to address evolving validation needs.
 
-Good luck!
+- **Error Message Customization:** Developers have the capability to enhance the
+  user experience by customizing error messages associated with different
+  validation rules. Whenever new validation rules are introduced, updating the
+  schema function will enable accurate and informative error messages to be
+  displayed to users.
+
+By combining the Zod library with user-friendly dynamic validation settings,
+this project ensures that data input is accurate, reliable, and aligned with the
+project's specific validation criteria. Developers can easily manage and extend
+validation rules, fostering a more efficient and adaptable development process.
